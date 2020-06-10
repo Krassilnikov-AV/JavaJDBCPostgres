@@ -6,43 +6,35 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class JavaJDBCPostgres {
+public class Connection_postgreSQL {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      System.out.println("-------- PostgreSQL "
-                + "JDBC Connection Testing ------------");
+      System.out.println("-------- PostgreSQL "+ "JDBC Connection Testing ------------");
 
         try {
-
             Class.forName("org.postgresql.Driver");
-
         } catch (ClassNotFoundException e) {
-
             System.out.println("Where is your PostgreSQL JDBC Driver? "
                     + "Include in your library path!");
             e.printStackTrace();
             return;
-
         }
 System.out.println("PostgreSQL JDBC Driver Registered!");
 
         Connection connection = null;
-
         try {
-
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://127.0.0.1:5432/testdb", "mkyong",
-                    "123456");
-
+                    "jdbc:postgresql://localhost:5432/postgres", "Postgres",
+                    "alex159");
+            System.out.println("Connection.....");
         } catch (SQLException e) {
 
             System.out.println("Connection Failed! Check output console");
             e.printStackTrace();
             return;
-
         }
 
         if (connection != null) {
@@ -50,6 +42,5 @@ System.out.println("PostgreSQL JDBC Driver Registered!");
         } else {
             System.out.println("Failed to make connection!");
         }
-    }
-    
+    }    
 }
