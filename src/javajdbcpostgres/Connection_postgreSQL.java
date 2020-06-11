@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+// Пересмотреть и добавить строчные поля для соединения 
+// в которых указать имя БД, логин, пароль
+
 
 public class Connection_postgreSQL {
 
